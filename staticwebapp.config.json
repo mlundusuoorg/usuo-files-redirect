@@ -1,9 +1,23 @@
 {
   "routes": [
     {
+      "route": "/",
+      "redirect": "https://usuo.sharepoint.com/sites/USUOFiles",
+      "statusCode": 302
+    },
+    {
       "route": "/*",
       "redirect": "https://usuo.sharepoint.com/sites/USUOFiles",
       "statusCode": 302
     }
-  ]
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "responseOverrides": {
+    "404": {
+      "redirect": "https://usuo.sharepoint.com/sites/USUOFiles",
+      "statusCode": 302
+    }
+  }
 }
